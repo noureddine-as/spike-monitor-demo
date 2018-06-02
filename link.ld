@@ -7,6 +7,10 @@
 /*----------------------------------------------------------------------*/
 
 OUTPUT_ARCH( "riscv" )
+
+MONITOR_BASE = 0x81000000;
+MONITOR_SIZE = 8;
+
 ENTRY(_start)
 
 /*----------------------------------------------------------------------*/
@@ -75,8 +79,14 @@ SECTIONS
     __stack = _stack;
   }
 
-
   /* End of uninitalized data segement */
   _end = .;
+
+  . = MONITOR_BASE;
+  .monitor : {
+    *(.monitor)
+    __monitor_end = .;
+  }
+
 }
 

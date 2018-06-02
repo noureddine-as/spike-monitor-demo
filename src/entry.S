@@ -236,6 +236,12 @@ fill_block:
 fb_end:
   ret
 
+  .section ".monitor","aw",@progbits
+monitor_base: .dword 0xDEADBEEFAAABBBBB
+
+
+
+
 # tohost and fromhost variables are used to communicate with the front-end server
 # this serves to print text for example using the functions defines in syscalls
 .section ".tohost","aw",@progbits

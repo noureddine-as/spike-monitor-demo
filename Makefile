@@ -87,6 +87,11 @@ $(TARGET).out: compile-all
 sim:
 	@echo "-------------  Starting Spike ISS Simulation  -------------"
 	$(SPIKE) -p$(N_PROC) --isa=$(ISA) $(TARGET).out 
+
+.PHONY: monitor
+monitor:
+	@echo "-------------  Starting Spike ISS Simulation  -------------"
+	$(SPIKE) -p$(N_PROC) --isa=$(ISA) --monitor=$(MONITOR_BASE) $(TARGET).out 
 	
 .PHONY: interactive-debug
 interactive-debug:
