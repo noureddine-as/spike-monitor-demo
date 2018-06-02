@@ -236,8 +236,7 @@ fill_block:
 fb_end:
   ret
 
-  .section ".monitor","aw",@progbits
-monitor_base: .dword 0xDEADBEEFAAABBBBB
+
 
 
 

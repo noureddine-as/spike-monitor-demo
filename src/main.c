@@ -31,8 +31,8 @@ int main(int argc, char** argv)
 
 
     uint64_t * addr = (uint64_t *)(MONITOR_BASE);
-    uint64_t val = *addr;
-    *addr = 0xABCDDDDCDEADBEEF;
+    //uint64_t val = *addr;
+    //*addr = 0xABCDDDDCDEADBEEF;
 
     printf("Value at 0x%x = 0x%llx \n", MONITOR_BASE, *addr);
 
